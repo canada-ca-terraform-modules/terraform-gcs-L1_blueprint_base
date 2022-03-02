@@ -16,7 +16,7 @@ data "google_service_account" "tfadmin" {
 
 module "project_vms" {
   # source = "/home/bernard/github/modules/terraform-gcs-caf-virtual_machine"
-  source = "github.com/canada-ca-terraform-modules/terraform-gcs-caf-virtual_machine?ref=v0.1.1"
+  source = "github.com/canada-ca-terraform-modules/terraform-gcs-caf-virtual_machine?ref=v0.1.2"
   # version = "~> v0.0.1"
 
   for_each          = local.deployListVMs

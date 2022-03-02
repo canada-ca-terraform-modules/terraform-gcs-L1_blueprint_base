@@ -1,9 +1,9 @@
 resource "google_compute_firewall" "project_firewall" {
   for_each = var.firewall
 
-  name    = each.key
+  name        = each.key
   description = try(each.value.description, null)
-  network = google_compute_network.vpc_network.name
+  network     = google_compute_network.vpc_network.name
 
   dynamic "allow" {
     for_each = try(each.value.allow, [])
@@ -21,9 +21,9 @@ resource "google_compute_firewall" "project_firewall" {
     }
   }
 
-  priority = try(each.value.priority, null)
+  priority  = try(each.value.priority, null)
   direction = try(each.value.direction, "INGRESS")
-  disabled = try(each.value.disabled, false)
+  disabled  = try(each.value.disabled, false)
 
   source_ranges           = try(each.value.source_ranges, null)
   destination_ranges      = try(each.value.destination_ranges, null)

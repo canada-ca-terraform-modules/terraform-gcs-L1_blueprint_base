@@ -1,7 +1,7 @@
 data "google_compute_network" "core_vpc_network" {
   count = try(var.deployOptionalFeatures.vdc_peering, false) ? 1 : 0
 
-  name = var.optionalFeatures.vdc_peering.core_vdc_vpc_name
+  name    = var.optionalFeatures.vdc_peering.core_vdc_vpc_name
   project = var.optionalFeatures.vdc_peering.core_vdc_project_name
 }
 

@@ -20,12 +20,12 @@ variable "project_name" {
 }
 
 variable "deployOptionalFeatures" {
-  type = any
+  type    = any
   default = {}
 }
 
 variable "optionalFeatures" {
-  type = any
+  type    = any
   default = {}
 }
 
