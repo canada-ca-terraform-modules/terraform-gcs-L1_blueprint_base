@@ -4,7 +4,7 @@ resource "google_compute_network" "vpc_network" {
   routing_mode                    = try(var.network.vpc.routing_mode, null)
   project                         = try(var.network.vpc.project_id, null)
   description                     = try(var.network.vpc.description, null)
-  delete_default_routes_on_create = try(var.network.vpc.delete_default_internet_gateway_routes, null)
+  delete_default_routes_on_create = try(var.network.vpc.delete_default_internet_gateway_routes, true)
   mtu                             = try(var.network.vpc.mtu, null)
 }
 
